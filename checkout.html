@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Checkout</title>
+    <!-- Reuse your existing CSS for consistency -->
+    <link rel="stylesheet" href="ecom.css" />
+    <!-- jQuery for any needed JS functionality -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <style>
+      /* Optional: Additional styling for the checkout form */
+      .checkout-container {
+        max-width: 600px;
+        margin: 80px auto;
+        background: #fff;
+        border-radius: 8px;
+        padding: 30px;
+        box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+        animation: fadeInUp 0.7s ease forwards;
+      }
+      .checkout-container h2 {
+        text-align: center;
+        margin-bottom: 20px;
+      }
+      .checkout-form {
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+      }
+      .checkout-form label {
+        font-weight: 500;
+        color: var(--light-black);
+      }
+      .checkout-form input[type="text"],
+      .checkout-form input[type="tel"],
+      .checkout-form input[type="email"] {
+        padding: 12px;
+        border: 1px solid var(--grey);
+        border-radius: 4px;
+        outline: none;
+      }
+      .checkout-form input[readonly] {
+        background: #f0f0f0;
+        cursor: not-allowed;
+      }
+      .checkout-form .checkbox-container {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+      }
+      .checkout-form button {
+        background: var(--primary-color);
+        color: #fff;
+        padding: 14px;
+        border: none;
+        border-radius: 4px;
+        font-size: 16px;
+        cursor: pointer;
+        transition: background 0.3s ease;
+      }
+      .checkout-form button:hover {
+        background: #e22e6a; /* Slightly darker shade */
+      }
+    </style>
+  </head>
+  <body>
+    <div class="checkout-container animate">
+      <h2>Checkout</h2>
+      <form class="checkout-form" action="#" method="POST">
+        <!-- Product Name (optional) -->
+        <label for="productName">Product:</label>
+        <input
+          type="text"
+          id="productName"
+          name="productName"
+          readonly
+        />
+
+        <!-- Price -->
+        <label for="price">Price (DT):</label>
+        <input
+          type="text"
+          id="price"
+          name="price"
+          readonly
+        />
+
+        <!-- Name -->
+        <label for="name">Full Name:</label>
+        <input
+          type="text"
+          id="name"
+          name="name"
+          placeholder="Enter your name"
+          required
+        />
+
+        <!-- Phone -->
+        <label for="phone">Phone Number:</label>
+        <input
+          type="tel"
+          id="phone"
+          name="phone"
+          placeholder="Enter your phone number"
+          required
+        />
+
+        <!-- Email -->
+        <label for="email">Email:</label>
+        <input
+          type="email"
+          id="email"
+          name="email"
+          placeholder="Enter your email"
+          required
+        />
+
+        <!-- Cash on Delivery -->
+        <div class="checkbox-container">
+          <input type="checkbox" id="cod" name="cod" required />
+          <label for="cod">I agree to pay cash on delivery</label>
+        </div>
+
+        <!-- Submit -->
+        <button type="submit">Confirm Order</button>
+      </form>
+    </div>
+
+    <!-- Script to read price (and product name) from URL query params -->
+    <script>
+      $(document).ready(function () {
+        // Parse URL parameters
+        const params = new URLSearchParams(window.location.search);
+        const productParam = params.get("product");
+        const priceParam = params.get("price");
+
+        // Fill in the form fields (if present)
+        if (productParam) {
+          $("#productName").val(decodeURIComponent(productParam));
+        }
+        if (priceParam) {
+          $("#price").val(priceParam);
+        }
+      });
+    </script>
+  </body>
+</html>
