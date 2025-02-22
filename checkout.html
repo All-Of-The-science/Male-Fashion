@@ -3,19 +3,19 @@
   <head>
     <meta charset="UTF-8" />
     <title>Checkout</title>
-    <!-- Reuse your existing CSS for consistency -->
+    <!-- Reuse your existing CSS (ecom.css) for consistent styling/animations -->
     <link rel="stylesheet" href="ecom.css" />
-    <!-- jQuery for any needed JS functionality -->
+    <!-- jQuery for the script below -->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <style>
-      /* Optional: Additional styling for the checkout form */
+      /* Optional extra styling for the checkout form container */
       .checkout-container {
         max-width: 600px;
         margin: 80px auto;
         background: #fff;
         border-radius: 8px;
         padding: 30px;
-        box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
         animation: fadeInUp 0.7s ease forwards;
       }
       .checkout-container h2 {
@@ -67,25 +67,15 @@
     <div class="checkout-container animate">
       <h2>Checkout</h2>
       <form class="checkout-form" action="#" method="POST">
-        <!-- Product Name (optional) -->
+        <!-- PRODUCT NAME (READONLY) -->
         <label for="productName">Product:</label>
-        <input
-          type="text"
-          id="productName"
-          name="productName"
-          readonly
-        />
+        <input type="text" id="productName" name="productName" readonly />
 
-        <!-- Price -->
+        <!-- PRICE (READONLY) -->
         <label for="price">Price (DT):</label>
-        <input
-          type="text"
-          id="price"
-          name="price"
-          readonly
-        />
+        <input type="text" id="price" name="price" readonly />
 
-        <!-- Name -->
+        <!-- NAME -->
         <label for="name">Full Name:</label>
         <input
           type="text"
@@ -95,7 +85,7 @@
           required
         />
 
-        <!-- Phone -->
+        <!-- PHONE -->
         <label for="phone">Phone Number:</label>
         <input
           type="tel"
@@ -105,7 +95,7 @@
           required
         />
 
-        <!-- Email -->
+        <!-- EMAIL -->
         <label for="email">Email:</label>
         <input
           type="email"
@@ -115,26 +105,26 @@
           required
         />
 
-        <!-- Cash on Delivery -->
+        <!-- CASH ON DELIVERY CHECKBOX -->
         <div class="checkbox-container">
           <input type="checkbox" id="cod" name="cod" required />
           <label for="cod">I agree to pay cash on delivery</label>
         </div>
 
-        <!-- Submit -->
+        <!-- SUBMIT BUTTON -->
         <button type="submit">Confirm Order</button>
       </form>
     </div>
 
-    <!-- Script to read price (and product name) from URL query params -->
+    <!-- Fill the product and price from URL parameters -->
     <script>
       $(document).ready(function () {
-        // Parse URL parameters
+        // e.g. checkout.html?product=Black%20Suit&price=350
         const params = new URLSearchParams(window.location.search);
-        const productParam = params.get("product");
-        const priceParam = params.get("price");
+        const productParam = params.get("product"); // "Black Suit"
+        const priceParam = params.get("price"); // "350"
 
-        // Fill in the form fields (if present)
+        // Populate the read-only inputs
         if (productParam) {
           $("#productName").val(decodeURIComponent(productParam));
         }
