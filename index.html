@@ -5,12 +5,16 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <title>Fashion</title>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <!-- Your existing CSS file -->
     <link rel="stylesheet" type="text/css" media="screen" href="ecom.css" />
-    <!-- jQuery (required for the animations and smooth scroll) -->
+    <!-- jQuery (for animations and smooth scroll) -->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <!-- Your updated JavaScript file (see ecom.js code below) -->
     <script src="ecom.js" defer></script>
   </head>
+
   <body>
+    <!-- TOP TEXT -->
     <section class="top-txt">
       <div class="head container">
         <div class="head-txt">
@@ -22,6 +26,8 @@
         </div>
       </div>
     </section>
+
+    <!-- NAVBAR -->
     <nav class="navbar">
       <div class="navbar-container">
         <input type="checkbox" id="checkbox" />
@@ -41,10 +47,12 @@
         </div>
       </div>
     </nav>
+
+    <!-- HERO SECTION -->
     <section id="home">
       <div class="home_page">
         <div class="home_img animate">
-          <!-- Replace the src with the path to your newly uploaded image -->
+          <!-- Replace with your hero image -->
           <img src="Untitled design (53).png" alt="Fashion Banner" />
         </div>
         <div class="home_txt animate">
@@ -57,7 +65,8 @@
             </p>
           </div>
           <button>
-            <a href="#all-products">SHOP NOW</a><i class="bx bx-right-arrow-alt"></i>
+            <a href="#all-products">SHOP NOW</a
+            ><i class="bx bx-right-arrow-alt"></i>
           </button>
           <div class="home_social_icons">
             <a href="#"><i class="bx bxl-facebook"></i></a>
@@ -69,33 +78,28 @@
       </div>
     </section>
 
-    <!-- Existing Collections Section -->
+    <!-- COLLECTIONS (3 CATEGORIES) -->
     <section id="collection">
       <div class="collections container">
-        <!-- Clothing Collection Card -->
+        <!-- Clothing Category -->
         <div class="content">
-          <img
-            src="suit.jpg"
-            alt="Clothing"
-          />
+          <img src="suit.jpg" alt="Clothing" />
           <div class="img-content">
-            <p>suits</p>
-            <!-- Change link to point to #clothing-products -->
+            <p>Suits</p>
+            <!-- Link to the clothing section -->
             <button><a href="#clothing-products">SHOP NOW</a></button>
           </div>
         </div>
-
-        <!-- Shoes Collection Card -->
+        <!-- Shoes Category -->
         <div class="content2">
           <img src="https://i.postimg.cc/8CmBZH5N/shoes.webp" alt="Shoes" />
           <div class="img-content2">
             <p>Shoes Spring</p>
-            <!-- Change link to point to #shoes-products -->
+            <!-- Link to the shoes section -->
             <button><a href="#shoes-products">SHOP NOW</a></button>
           </div>
         </div>
-
-        <!-- Accessories Collection Card -->
+        <!-- Accessories Category -->
         <div class="content3">
           <img
             src="https://i.postimg.cc/MHv7KJYp/access.webp"
@@ -103,163 +107,172 @@
           />
           <div class="img-content3">
             <p>Accessories</p>
-            <!-- Change link to point to #accessories-products -->
+            <!-- Link to the accessories section -->
             <button><a href="#accessories-products">SHOP NOW</a></button>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- New All-Products Section -->
+    <!-- ALL PRODUCTS SECTION -->
     <section id="all-products" class="animate">
       <div class="container">
         <h2>All Products</h2>
         <div class="collections">
           <!-- Product 1 -->
           <div class="content">
-            <!-- Replace with your product image -->
             <img src="suit 5.jpg" alt="Product 1" />
-            <div class="img-content">
+            <div class="img-content" data-product="Black Suit" data-price="350">
               <p>Black Suit</p>
               <p>350dt</p>
-              <button><a href="#">SHOP NOW</a></button>
+              <button class="buy-now-btn">Buy Now</button>
             </div>
           </div>
 
           <!-- Product 2 -->
           <div class="content">
-            <!-- Replace with your product image -->
             <img src="polo 3.png" alt="Product 2" />
-            <div class="img-content">
-              <p>Polo t-shirt</p>
+            <div
+              class="img-content"
+              data-product="Polo T-Shirt"
+              data-price="60"
+            >
+              <p>Polo T-Shirt</p>
               <p>60dt</p>
-              <button><a href="#">SHOP NOW</a></button>
+              <button class="buy-now-btn">Buy Now</button>
             </div>
           </div>
 
           <!-- Product 3 -->
           <div class="content">
-            <!-- Replace with your product image -->
             <img src="suit 3.webp" alt="Product 3" />
-            <div class="img-content">
-              <p>Full suit</p>
+            <div class="img-content" data-product="Full Suit" data-price="450">
+              <p>Full Suit</p>
               <p>450dt</p>
-              <button><a href="#">SHOP NOW</a></button>
+              <button class="buy-now-btn">Buy Now</button>
             </div>
           </div>
 
           <!-- Product 4 -->
           <div class="content">
-            <!-- Replace with your product image -->
             <img src="polo 2.jpg" alt="Product 4" />
-            <div class="img-content">
-              <p>high quality polo t-shirt</p>
+            <div
+              class="img-content"
+              data-product="High Quality Polo T-Shirt"
+              data-price="80"
+            >
+              <p>High Quality Polo T-Shirt</p>
               <p>80dt</p>
-              <button><a href="#">SHOP NOW</a></button>
+              <button class="buy-now-btn">Buy Now</button>
             </div>
           </div>
-
-          <!-- Add more products as needed -->
         </div>
       </div>
     </section>
 
+    <!-- CLOTHING PRODUCTS SECTION -->
+    <section id="clothing-products" class="animate">
+      <div class="container">
+        <h2>Suits</h2>
+        <div class="collections">
+          <!-- Product 1 -->
+          <div class="content">
+            <img src="suit 3.webp" alt="Clothing Product 1" />
+            <div class="img-content" data-product="Gray Suit" data-price="450">
+              <p>Gray Suit</p>
+              <p>450dt</p>
+              <button class="buy-now-btn">Buy Now</button>
+            </div>
+          </div>
+          <!-- Product 2 -->
+          <div class="content">
+            <img src="suit 2.jpg" alt="Clothing Product 2" />
+            <div
+              class="img-content"
+              data-product="Black Full Suit"
+              data-price="500"
+            >
+              <p>Black Full Suit</p>
+              <p>500dt</p>
+              <button class="buy-now-btn">Buy Now</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
 
-    <!-- Clothing Products Section -->
-<section id="clothing-products" class="animate">
-    <div class="container">
-      <h2>suits</h2>
-      <div class="collections">
-        <!-- Product 1 -->
-        <div class="content">
-          <img src="suit 3.webp" alt="Clothing Product 1" />
-          <div class="img-content">
-            <p>suit</p>
-            <p>450dt</p>
-            <button><a href="#">SHOP NOW</a></button>
+    <!-- SHOES PRODUCTS SECTION -->
+    <section id="shoes-products" class="animate">
+      <div class="container">
+        <h2>Shoes Collection</h2>
+        <div class="collections">
+          <!-- Product 1 -->
+          <div class="content">
+            <img src="converse.jpg" alt="Shoes Product 1" />
+            <div class="img-content" data-product="Converse" data-price="80">
+              <p>Converse</p>
+              <p>80dt</p>
+              <button class="buy-now-btn">Buy Now</button>
+            </div>
+          </div>
+          <!-- Product 2 -->
+          <div class="content">
+            <img src="adidas.jpg" alt="Shoes Product 2" />
+            <div class="img-content" data-product="Adidas Shoe" data-price="90">
+              <p>Adidas Shoe</p>
+              <p>90dt</p>
+              <button class="buy-now-btn">Buy Now</button>
+            </div>
           </div>
         </div>
-        <!-- Product 2 -->
-        <div class="content">
-          <img src="suit 2.jpg" alt="Clothing Product 2" />
-          <div class="img-content">
-            <p>black full suit</p>
-            <p>500dt</p>
-            <button><a href="#">SHOP NOW</a></button>
-          </div>
-        </div>
-        <!-- Add more clothing products as needed -->
       </div>
-    </div>
-  </section>
-  
-  <!-- Shoes Products Section -->
-  <section id="shoes-products" class="animate">
-    <div class="container">
-      <h2>Shoes Collection</h2>
-      <div class="collections">
-        <!-- Product 1 -->
-        <div class="content">
-          <img src="converse.jpg" alt="Shoes Product 1" />
-          <div class="img-content">
-            <p>converse</p>
-            <p>80dt</p>
-            <button><a href="#">SHOP NOW</a></button>
-          </div>
-        </div>
-        <!-- Product 2 -->
-        <div class="content">
-          <img src="adidas.jpg" alt="Shoes Product 2" />
-          <div class="img-content">
-            <p>adidas shoe</p>
-            <p>90dt</p>
-            <button><a href="#">SHOP NOW</a></button>
-          </div>
-        </div>
-        <!-- Add more shoe products as needed -->
-      </div>
-    </div>
-  </section>
-  
-  <!-- Accessories Products Section -->
-  <section id="accessories-products" class="animate">
-    <div class="container">
-      <h2>Accessories Collection</h2>
-      <div class="collections">
-        <!-- Product 1 -->
-        <div class="content">
-          <img src="glasses1.jpg" alt="Accessories Product 1" />
-          <div class="img-content">
-            <p>glasses</p>
-            <p>150dt</p>
-            <button><a href="#">SHOP NOW</a></button>
-          </div>
-        </div>
-        <!-- Product 2 -->
-        <div class="content">
-          <img src="glasses2.jpg" alt="Accessories Product 2" />
-          <div class="img-content">
-            <p>blue glasses</p>
-            <p>120dt</p>
-            <button><a href="#">SHOP NOW</a></button>
-          </div>
-        </div>
-        <!-- Add more accessories products as needed -->
-      </div>
-    </div>
-  </section>
-  
+    </section>
 
+    <!-- ACCESSORIES PRODUCTS SECTION -->
+    <section id="accessories-products" class="animate">
+      <div class="container">
+        <h2>Accessories Collection</h2>
+        <div class="collections">
+          <!-- Product 1 -->
+          <div class="content">
+            <img src="glasses1.jpg" alt="Accessories Product 1" />
+            <div class="img-content" data-product="Glasses" data-price="150">
+              <p>Glasses</p>
+              <p>150dt</p>
+              <button class="buy-now-btn">Buy Now</button>
+            </div>
+          </div>
+          <!-- Product 2 -->
+          <div class="content">
+            <img src="glasses2.jpg" alt="Accessories Product 2" />
+            <div
+              class="img-content"
+              data-product="Blue Glasses"
+              data-price="120"
+            >
+              <p>Blue Glasses</p>
+              <p>120dt</p>
+              <button class="buy-now-btn">Buy Now</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- TOP SALES SECTION -->
     <section id="sellers" class="animate">
       <div class="seller container">
         <h2>Top Sales</h2>
         <div class="best-seller">
+          <!-- Example item -->
           <div class="best-p1">
-            <img
-              src="converse.jpg"
-              alt="converse shoes"
-            />
-            <div class="best-p1-txt">
+            <img src="converse.jpg" alt="converse shoes" />
+            <!-- We’ll put data attributes on .best-p1-txt -->
+            <div
+              class="best-p1-txt"
+              data-product="Black Converse Shoes"
+              data-price="80"
+            >
               <div class="name-of-p">
                 <p>Black Converse shoes</p>
               </div>
@@ -279,24 +292,23 @@
                 </div>
               </div>
               <div class="buy-now">
-                <button>
-                  <a href="https://codepen.io/sanketbodke/full/mdprZOq"
-                    >Buy Now</a
-                  >
-                </button>
+                <button class="buy-now-btn">Buy Now</button>
               </div>
             </div>
           </div>
-          <!-- Add additional seller items as needed -->
+          <!-- Add additional top-sales items similarly -->
         </div>
       </div>
     </section>
+
+    <!-- NEWS SECTION -->
     <section id="news" class="animate">
       <div class="news-heading container">
         <p>LATEST NEWS</p>
         <h2>Fashion New Trends</h2>
       </div>
       <div class="l-news container">
+        <!-- Example news item -->
         <div class="l-news1">
           <div class="news1-img">
             <img src="https://i.postimg.cc/2y6wbZCm/news1.jpg" alt="News 1" />
@@ -313,52 +325,23 @@
             </div>
           </div>
         </div>
-        <div class="l-news2">
-          <div class="news2-img">
-            <img src="https://i.postimg.cc/9MXPK7RT/news2.jpg" alt="News 2" />
-          </div>
-          <div class="news2-conte">
-            <div class="date-news2">
-              <p><i class="bx bxs-calendar"></i> 17 February 2022</p>
-              <h4>The Health Benefits Of Sunglasses</h4>
-              <a
-                href="https://www.rivieraopticare.com/blog/314864-the-health-benefits-of-wearing-sunglasses_2/"
-                target="_blank"
-                >read more</a
-              >
-            </div>
-          </div>
-        </div>
-        <div class="l-news3">
-          <div class="news3-img">
-            <img src="https://i.postimg.cc/x1KKdRLM/news3.jpg" alt="News 3" />
-          </div>
-          <div class="news3-conte">
-            <div class="date-news3">
-              <p><i class="bx bxs-calendar"></i> 26 February 202</p>
-              <h4>Eternity Bands Do Last Forever</h4>
-              <a
-                href="https://www.briangavindiamonds.com/news/eternity-bands-symbolize-love-that-lasts-forever/"
-                target="_blank"
-                >read more</a
-              >
-            </div>
-          </div>
-        </div>
+        <!-- Add more news items as needed -->
       </div>
     </section>
+
+    <!-- CONTACT SECTION -->
     <section id="contact" class="animate">
       <div class="contact container">
         <div class="map">
+          <!-- Your location iframe -->
           <iframe
             src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3232.1175642899993!2d10.0751256!3d36.7752183!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x12fd2e11e04c5f45%3A0x11b567d2c64f481f!2sSalle%20des%20f%C3%AAtes%20Zitouna%20Events!5e0!3m2!1sen!2sus!4v1610000000000!5m2!1sen!2sus"
             allowfullscreen=""
             loading="lazy"
             referrerpolicy="no-referrer-when-downgrade"
-          >
-          </iframe>
+          ></iframe>
         </div>
-        <!-- Rest of your contact form code remains unchanged -->
+        <!-- Contact Form -->
         <form action="https://formspree.io/f/xzbowpjq" method="POST">
           <div class="form">
             <div class="form-txt">
@@ -401,6 +384,7 @@
       </div>
     </section>
 
+    <!-- FOOTER -->
     <footer>
       <div class="footer-container container">
         <div class="content_1">
